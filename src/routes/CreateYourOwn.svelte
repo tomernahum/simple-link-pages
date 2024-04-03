@@ -1,9 +1,11 @@
 <script lang="ts">
-  import type { LinkPageData } from "./data";
+    import type { LinkPageData } from "./data";
+
+    export let defaultData: any = null
 
 
-    let links:LinkPageData["links"] = [{href: "", title: ""}]
-    let favicon = ""
+    let links:LinkPageData["links"] = defaultData?.links || [{href: "", title: ""}]
+    let favicon = defaultData?.favicon || ""
 
     $: dataJson = favicon  ? { favicon, links } : {links}
     $: url = `/custom?data=${JSON.stringify(dataJson)}`

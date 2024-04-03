@@ -1,5 +1,7 @@
 <script>
-  import CreateYourOwn from "./CreateYourOwn.svelte";
+    import CreateYourOwn from "./CreateYourOwn.svelte";
+
+    export let data;
 
 </script>
 
@@ -18,7 +20,16 @@
         <li><a href="/music">music</a></li>
     </ul>
 
-    <CreateYourOwn />
+    {#if data}
+        <CreateYourOwn defaultData={data}/>
+    {:else}
+        <CreateYourOwn />
+    {/if}
+    <br>
+    <p>(remove the word "custom" from a url to edit the links of that page)</p>
+
+    <br>
+    <p style="margin-top: 7rem">More random tools at <a href="https://www.ttools.io">ttools.io</a></p>
 </main>
 
 <style>
@@ -49,7 +60,7 @@
 
     @media (prefers-color-scheme: dark) {
         main {
-            color: hsl(0, 0%, 88%);
+            color: hsl(0, 0%, 90%);
         }
     }
 </style>

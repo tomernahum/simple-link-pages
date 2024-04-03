@@ -23,6 +23,8 @@
             {/if}        
         {/each}
     </div>
+
+    <!-- <p>{data.favicon}</p> -->
 </main>
 
 <svelte:head>
