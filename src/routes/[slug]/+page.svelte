@@ -49,4 +49,13 @@
         
         gap: 0.5rem
     }
+
+    
+    @media (prefers-color-scheme: dark) {
+        a:visited {
+            /* color: #7bbdff; */
+            color: rgb(100, 150, 255)
+
+        }
+    }
 </style>

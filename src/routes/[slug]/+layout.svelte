@@ -15,4 +15,11 @@
         font-size: 2rem;
         font-family: sans-serif;
     }
+
+
+
+    :global(html) {
+        color-scheme: light dark;
+    }
+
 </style>
