@@ -1,10 +1,55 @@
+<script>
+  import CreateYourOwn from "./CreateYourOwn.svelte";
+
+</script>
 
 
+<main>
+    
+    <h1> Simple link pages </h1>
 
-<h1> Simple link pages </h1>
+    <p> I made this so i can favorite groups of urls in arc browser in one tab.</p>
+    <p>Feel free to use however you like</p>
 
-<li><a href="/ai">ai</a></li>
+    <h2>Premade Links:</h2>
+    <ul style="">
+        <li><a href="/ai">ai</a></li>
 
-<li><a href="/music">music</a></li>
+        <li><a href="/music">music</a></li>
+    </ul>
 
-<li>Might implement letting you create your own later</li>
+    <CreateYourOwn />
+</main>
+
+<style>
+    main {
+        margin-inline: auto;
+        max-width: 70ch;
+
+        /* padding-inline: 2rem; */
+
+        font-size: 1.2rem;
+        font-family: sans-serif;
+        
+    }
+
+    p {
+        margin: .2rem 0
+    }
+    h2 {
+        margin-bottom: .3rem;
+    }
+    ul {
+        margin-top: 0
+    }
+
+    :global(html) {
+        color-scheme: light dark;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        main {
+            color: hsl(0, 0%, 88%);
+        }
+    }
+</style>

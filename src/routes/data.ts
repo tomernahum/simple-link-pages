@@ -1,6 +1,10 @@
 
+export type LinkPageData = {
+    favicon?: string,
+    links: ({ href: string, title: string } | "br")[]
+}
 
-const db = {
+const db: Record<string, LinkPageData> = {
     default: {
         links: [
             { href: 'https://kit.svelte.dev', title: 'SvelteKit' },
@@ -63,3 +67,5 @@ export function getPageData(slug: string) {
         ...data
     }
 }
+
+

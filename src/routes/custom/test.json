@@ -1,0 +1,26 @@
+{
+    "favicon": "https://s2.googleusercontent.com/s2/favicons?domain=chat.openai.com",
+    "links": [
+        {
+            "title": "ChatGPT",
+            "href": "https://chat.openai.com"
+        },
+        {
+            "title": "Google Gemini",
+            "href": "https://gemini.google.com/app"
+        },
+        {
+            "title": "Perplexity.ai",
+            "href": "https://perplexity.ai"
+        },
+        "br",
+        {
+            "title": "Bing Chat",
+            "href": "https://bing.com/chat"
+        },
+        {
+            "title": "Google Search",
+            "href": "https://google.com"
+        }
+    ]
+}
