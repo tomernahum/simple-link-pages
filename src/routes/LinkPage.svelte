@@ -29,6 +29,7 @@
 
 <svelte:head>
     <link rel="icon" type="image/png" href="{data.favicon}" />
+    <title>{data.title || "Link Page"}</title>
 </svelte:head>
 
 <style>

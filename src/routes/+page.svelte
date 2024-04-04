@@ -32,6 +32,10 @@
     <p style="margin-top: 7rem">More random tools at <a href="https://www.ttools.io">ttools.io</a></p>
 </main>
 
+<svelte:head>
+    <title>Simple link pages</title>
+</svelte:head>
+
 <style>
     main {
         margin-inline: auto;

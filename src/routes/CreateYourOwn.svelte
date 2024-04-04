@@ -6,8 +6,9 @@
 
     let links:LinkPageData["links"] = defaultData?.links || [{href: "", title: ""}]
     let favicon = defaultData?.favicon || ""
+    let title = defaultData?.title || ""
 
-    $: dataJson = favicon  ? { favicon, links } : {links}
+    $: dataJson = { title, favicon, links }
     $: url = `/custom?data=${JSON.stringify(dataJson)}`
 </script>
 
@@ -49,6 +50,10 @@
         <br>
         <br>
 
+        <div class="favicon-group">
+            <h3>Page Title: </h3>
+            <input type="text" id="title" name="title" bind:value={title}>
+        </div>
         <div class="favicon-group">
             <h3>Favicon Url: </h3>
             <input type="url" id="favicon" name="favicon" bind:value={favicon}>

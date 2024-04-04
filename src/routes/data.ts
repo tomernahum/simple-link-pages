@@ -1,19 +1,11 @@
 
 export type LinkPageData = {
     favicon?: string,
+    title?: string,
     links: ({ href: string, title: string } | "br")[]
 }
 
 const db: Record<string, LinkPageData> = {
-    default: {
-        links: [
-            { href: 'https://kit.svelte.dev', title: 'SvelteKit' },
-            { href: 'https://google.com', title: 'Google' },
-            { href: 'https://github.com', title: 'Github' },
-            { href: 'https://www.ttools.io', title: 'ttools' }
-        ]
-    },
-
     music: {
         // favicon : "https://s2.googleusercontent.com/s2/favicons?fdomain=https://soundcloud.com",
         favicon: `
@@ -59,7 +51,9 @@ const db: Record<string, LinkPageData> = {
 
 export function getPageData(slug: string) {
 
-    const data = db[slug] || db.default
+    const data = db[slug] || undefined 
+
+    if (!data) return
 
 
     return {
