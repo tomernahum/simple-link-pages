@@ -2,7 +2,7 @@
 export type LinkPageData = {
     favicon?: string,
     title?: string,
-    links: ({ href: string, title: string } | "br")[]
+    links: ({ href: string, title: string, faviconUrl?: string } | "br")[]
 }
 
 const db: Record<string, LinkPageData> = {

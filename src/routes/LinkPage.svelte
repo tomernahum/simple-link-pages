@@ -4,8 +4,17 @@
     export let data: LinkPageData;
 
 
-    function getFavicon(url: string) {
-        return `https://s2.googleusercontent.com/s2/favicons?sz=32&domain=${url}`
+    function getFavicon(link: Exclude<LinkPageData["links"][number], "br">){
+        const href = link?.href
+        const faviconUrl = link?.faviconUrl
+        if (faviconUrl === "Auto" || faviconUrl === "" || !faviconUrl) {
+            if (!href) // return same as would a page with no favicon
+                return `https://s2.googleusercontent.com/s2/favicons?sz=32&domain=""`
+            return `https://s2.googleusercontent.com/s2/favicons?sz=32&domain=${href}`
+        }
+        else {
+            return link.faviconUrl
+        }
     }
 
 </script>
@@ -17,7 +26,7 @@
                 <span style = "margin-top: .75rem;" />
             {:else}
                 <li>
-                    <img src="{getFavicon(link.href)}" alt="favicon">  
+                    <img src="{getFavicon(link)}" alt="icon" style="width: 32px; height: 32px">  
                     <a href={link.href}>{link.title}</a>
                 </li>  
             {/if}        
