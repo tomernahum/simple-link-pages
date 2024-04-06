@@ -9,7 +9,10 @@
     let title = defaultData?.title || ""
 
     $: dataJson = { title, favicon, links }
-    $: url = `/custom?data=${JSON.stringify(dataJson)}`
+    $: url = `/custom?data=${
+        JSON.stringify(dataJson)
+        .replace("#", "%23")
+    }`
 </script>
 
 
