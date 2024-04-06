@@ -15,7 +15,7 @@
 
     <h2>Premade Links:</h2>
     <ul style="">
-        <li><a href="/ai">ai</a></li>
+        <li><a href="/ai">ai chat</a></li>
 
         <li><a href="/music">music</a></li>
 
