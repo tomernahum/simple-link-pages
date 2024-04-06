@@ -18,6 +18,8 @@
         <li><a href="/ai">ai</a></li>
 
         <li><a href="/music">music</a></li>
+
+        <li><a href="/messaging">messaging</a></li>
     </ul>
 
     {#if data}
