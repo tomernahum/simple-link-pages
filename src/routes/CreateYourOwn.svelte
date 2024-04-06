@@ -10,8 +10,7 @@
 
     $: dataJson = { title, favicon, links }
     $: url = `/custom?data=${
-        JSON.stringify(dataJson)
-        .replace("#", "%23")
+        encodeURIComponent(JSON.stringify(dataJson))
     }`
 </script>
 
