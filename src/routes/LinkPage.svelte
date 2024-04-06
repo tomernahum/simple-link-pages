@@ -5,12 +5,21 @@
 
 
     function getFavicon(link: Exclude<LinkPageData["links"][number], "br">){
+        const API_URL = "https://s2.googleusercontent.com/s2/favicons?sz=64&domain="
+
         const href = link?.href
         const faviconUrl = link?.faviconUrl
+
+        if (!href) // return same as would a page with no favicon
+            return `${API_URL}""`
+
+        if (faviconUrl === "None"){
+            return ""
+        }
+
         if (faviconUrl === "Auto" || faviconUrl === "" || !faviconUrl) {
-            if (!href) // return same as would a page with no favicon
-                return `https://s2.googleusercontent.com/s2/favicons?sz=32&domain=""`
-            return `https://s2.googleusercontent.com/s2/favicons?sz=32&domain=${href}`
+            
+            return `${API_URL}${href}`
         }
         else {
             return link.faviconUrl

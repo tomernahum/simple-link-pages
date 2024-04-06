@@ -4,7 +4,7 @@
     export let defaultData: any = null
 
 
-    let links:LinkPageData["links"] = defaultData?.links || [{href: "", title: "", faviconUrl: "Auto"}]
+    let links:LinkPageData["links"] = defaultData?.links || [{href: "", title: "", faviconUrl: ""}]
     let favicon = defaultData?.favicon || ""
     let title = defaultData?.title || ""
 
@@ -39,7 +39,7 @@
                 <div class="form-group">
                     <input type="url" id="link" name="link" bind:value={link.href}>
                     <input type="text" id="title" name="title" bind:value={link.title}>
-                    <input type="url" id="link" name="link" bind:value={link.faviconUrl}>
+                    <input type="url" id="link" name="link" bind:value={link.faviconUrl} placeholder="Auto">
                     {#if links.length > 0}
                         <button on:click={() => links = links.filter(l => l !== link)}>X</button>
                     {/if}
@@ -47,7 +47,7 @@
             {/if}
         {/each}
 
-        <button on:click={() => links = [...links, {href: "", title: "", faviconUrl: "Auto"}]}>Add Link</button>
+        <button on:click={() => links = [...links, {href: "", title: "", faviconUrl: ""}]}>Add Link</button>
         <button on:click={() => links = [...links, "br"]}>Add Gap</button>
         
 
@@ -105,9 +105,12 @@
     input {
         font-size: inherit;
         width: 100%;
-
+    }
+    .form-group input {
         text-align: center;
     }
+
+
     form h3 {
         margin: .5rem 0
     }
