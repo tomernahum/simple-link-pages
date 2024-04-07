@@ -20,7 +20,7 @@
     <h2>Create Your Own:</h2>
 
     <form on:submit|preventDefault>
-        <div style="display: flex; justify-content:space-around; padding-right: 3.3rem; padding-left: 2.6rem">
+        <div style="display: flex; justify-content:space-around; padding-right: 3.3rem; padding-left: 2.2rem">
             <h3 style="width:8rem; text-align: center;">Link</h3> 
             <h3 style="width:8rem; text-align: center;">Title</h3>
             <h3 style="width:8rem; text-align: center;">Favicon Url</h3>
