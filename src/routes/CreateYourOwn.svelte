@@ -20,31 +20,41 @@
     <h2>Create Your Own:</h2>
 
     <form on:submit|preventDefault>
-        <div style="display: flex; justify-content:space-around; padding-right: 3.2rem;">
+        <div style="display: flex; justify-content:space-around; padding-right: 3.3rem; padding-left: 2.6rem">
             <h3 style="width:8rem; text-align: center;">Link</h3> 
             <h3 style="width:8rem; text-align: center;">Title</h3>
             <h3 style="width:8rem; text-align: center;">Favicon Url</h3>
         </div>
 
-        {#each links as link}
-            {#if link === "br"}
-                <div class="form-group">
-                    <p style="margin:0"> </p>
+        {#each links as link, i}
 
-                    {#if links.length > 0}
-                        <button on:click={() => links = links.filter(l => l !== link)}>X</button>
-                    {/if}
-                </div>
-            {:else}
-                <div class="form-group">
-                    <input type="url" id="link" name="link" bind:value={link.href}>
+            <div class="form-group">
+
+                <button 
+                    style="padding: 0rem .5rem;"
+                    on:click={ () => {
+                        if (i - 1 < 0) return
+                        let temp = links[i - 1]
+                        links[i - 1] = links[i]
+                        links[i] = temp
+                    }}
+                >^</button>
+                
+
+                {#if link === "br"}
+                    <p style="margin:0"> </p>
+                {:else}
+                    <input type="text" id="link" name="link" bind:value={link.href}>
                     <input type="text" id="title" name="title" bind:value={link.title}>
-                    <input type="url" id="link" name="link" bind:value={link.faviconUrl} placeholder="Auto">
-                    {#if links.length > 0}
-                        <button on:click={() => links = links.filter(l => l !== link)}>X</button>
-                    {/if}
-                </div>
-            {/if}
+                    <input type="text" id="link" name="link" bind:value={link.faviconUrl} placeholder="Auto">
+                {/if}
+                
+                
+                {#if true}
+                    <button class="x-button" on:click={() => links = links.filter(l => l !== link)}>X</button>
+                {/if}
+                
+            </div>
         {/each}
 
         <button on:click={() => links = [...links, {href: "", title: "", faviconUrl: ""}]}>Add Link</button>
@@ -98,7 +108,7 @@
         
         margin-bottom: .5rem;
     }
-    .form-group button{
+    .form-group .x-button{
         margin-left: auto;
     }
 
