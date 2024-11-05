@@ -35,8 +35,8 @@ const db: Record<string, LinkPageData> = {
         href: "https://chat.openai.com",
       },
       {
-        title: "Google Gemini",
-        href: "https://gemini.google.com/app",
+        title: "Claude",
+        href: "https://www.claude.ai",
       },
       {
         title: "Perplexity.ai",
@@ -47,10 +47,15 @@ const db: Record<string, LinkPageData> = {
         title: "Bing Chat",
         href: "https://bing.com/chat",
       },
+      
       {
-        title: "Google Search",
-        href: "https://google.com",
+        title: "Google Gemini",
+        href: "https://gemini.google.com/app",
       },
+      // {
+      //   title: "Google Search",
+      //   href: "https://google.com",
+      // },
     ],
   },
 
