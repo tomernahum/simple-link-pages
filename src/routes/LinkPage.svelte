@@ -36,7 +36,14 @@
             {:else}
                 <li>
                     <img src="{getFavicon(link)}" alt="icon" style="width: 32px; height: 32px">  
-                    <a href={link.href}>{link.title}</a>
+                    
+                    <a 
+                        href={link.href}
+                        target="_parent"
+                    >
+                        <!-- setting target _parent currently makes zen open link in same tab instead of in preview -->
+                        {link.title}
+                    </a>
                 </li>  
             {/if}        
         {/each}
@@ -46,6 +53,7 @@
 </main>
 
 <svelte:head>
+    <link rel="icon" type="image/png" href="{data.favicon}" />
     <link rel="icon" type="image/png" href="{data.favicon}" />
     <title>{data.title || "Link Page"}</title>
 </svelte:head>

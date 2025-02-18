@@ -10,7 +10,7 @@
     
     <h1> Simple link pages </h1>
 
-    <p> I made this so i can favorite groups of urls in arc browser in one tab.</p>
+    <p> I made this so i can favorite groups of urls in arc/zen browser in one tab.</p>
     <p>Feel free to use however you like</p>
 
     <h2>Premade Links:</h2>
