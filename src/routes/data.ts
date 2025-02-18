@@ -35,29 +35,66 @@ const db: Record<string, LinkPageData> = {
         href: "https://chat.openai.com",
       },
       {
+        title: "Perplexity",
+        href: "https://perplexity.ai",
+      },
+      {
         title: "Claude",
         href: "https://www.claude.ai",
       },
+      // "br",
       {
-        title: "Perplexity.ai",
-        href: "https://perplexity.ai",
-      },
-      "br",
-      {
-        title: "Bing Chat",
-        href: "https://bing.com/chat",
-      },
-      
-      {
-        title: "Google Gemini",
+        // title: "Google Gemini",
+        title: "Gemini",
         href: "https://gemini.google.com/app",
       },
+
       // {
-      //   title: "Google Search",
-      //   href: "https://google.com",
+      //   // title: "Microsoft Copilot",
+      //   title: "Copilot Chat",
+      //   href: "https://bing.com/chat",
+      //   // Keep?
       // },
+      // {
+      //   title: "Meta AI",
+      //   href: "https://www.meta.ai/"
+      // },
+
+      // {
+      //   title: "Grok",
+      //   href: "https://grok.com/"
+      // },
+      "br",
+      {
+        title: "DeepSeek",
+        href: "https://chat.deepseek.com/",
+      },
+      {
+        title: "Mistral",
+        href: "https://chat.mistral.ai/chat"
+      },
+      {
+        title: "Qwen",
+        href: "https://chat.qwenlm.ai/",
+      },
+      
+      "br",
+      {
+        title: "T3 chat",
+        href: "https://t3.chat",
+        // made by theo who is not me
+      },
+      {
+        title: "OpenRouter",
+        href: "https://openrouter.ai/chat"
+      }
     ],
   },
+  // ai2: {
+  //   title: "Many AI Links",
+  //   links: [
+  //   ]
+  // },
 
   messaging: {
     title: "Messaging",
