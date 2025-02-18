@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { beforeUpdate, onMount } from "svelte";
     import type { LinkPageData } from "./data";
 
     export let data: LinkPageData;
@@ -25,6 +26,28 @@
             return link.faviconUrl
         }
     }
+
+    // our pages favicon light/dark
+    onMount(()=>{
+        if (typeof window == "undefined") return
+        if (typeof data.favicon == "string" ) return
+        function updateFavicon() {
+            const favicon = document.querySelector('head > link[rel="icon"]')! as HTMLLinkElement;
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+            // console.log("Updating favicon", prefersDark, favicon, data.favicon.light, data.favicon.dark)
+            if (prefersDark) {
+                favicon.href = data.favicon.dark;
+            } else {
+                favicon.href = data.favicon.light;
+            }
+        }
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateFavicon);
+        updateFavicon();
+        setTimeout(updateFavicon); // idk why but this is needed to make it work on firefox, don't feel like spending time to figure out why. 
+        setTimeout(updateFavicon, 700); // just in case
+    })
+
 
 </script>
 
@@ -53,8 +76,16 @@
 </main>
 
 <svelte:head>
-    <link rel="icon" type="image/png" href="{data.favicon}" />
-    <link rel="icon" type="image/png" href="{data.favicon}" />
+    <!-- TODO add full favicon support so it works in safari -->
+    {#if typeof data.favicon === "string"}
+        <link rel="icon" type="image/png" href="{data.favicon}" />
+    {:else if typeof data.favicon === "object"}
+        <link rel="icon" type="image/png" href="{data.favicon.dark}" />
+        
+        <link rel="icon" type="image/png" href="{data.favicon.dark}" media="(prefers-color-scheme: dark)" />
+        <link rel="icon" type="image/png" href="{data.favicon.light}" media="(prefers-color-scheme: light)" />
+    {/if}
+    
     <title>{data.title || "Link Page"}</title>
 </svelte:head>
 
