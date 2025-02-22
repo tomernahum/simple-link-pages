@@ -1,0 +1,4 @@
+
+- current version optimized for chromium (ie centering of the icons and link color), make soultions better work on both, or add a toggle to ask for a page optimized for firefox
+- post this on zen reddit
+- Feature for community submitted links

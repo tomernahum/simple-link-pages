@@ -93,15 +93,24 @@ const db: Record<string, LinkPageData> = {
       },
       
       "br",
+
+      // {
+      //   title: "Duck AI",
+      //   href: "https://duckduckgo.com/?q=DuckDuckGo+AI+Chat&ia=chat&duckai=1"
+      // },
       {
         title: "T3 chat",
         href: "https://t3.chat",
         // made by theo who is not me
       },
       {
-        title: "OpenRouter",
-        href: "https://openrouter.ai/chat"
-      }
+        title: "Hugging Chat",
+        href: "https://huggingface.co/chat/"
+      },
+      // {
+      //   title: "OpenRouter",
+      //   href: "https://openrouter.ai/chat"
+      // }
     ],
   },
   // ai2: {
