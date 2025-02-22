@@ -131,12 +131,17 @@ const db: Record<string, LinkPageData> = {
         href: "https://chat.openai.com",
       },
       {
+        title: "Claude",
+        href: "https://www.claude.ai",
+      },
+
+      {
         title: "Perplexity",
         href: "https://perplexity.ai",
       },
       {
-        title: "Claude",
-        href: "https://www.claude.ai",
+        title: "Phind",
+        href: "https://phind.com",
       },
       // "br",
       {
@@ -155,6 +160,11 @@ const db: Record<string, LinkPageData> = {
         href: "https://bing.com/chat",
       },
       
+      {
+        // title: "Pi",
+        title: "Pi AI",
+        href: "https://pi.ai/threads"
+      },
       
 
 
@@ -204,12 +214,17 @@ const db: Record<string, LinkPageData> = {
         // made by theo who is not me
       },
       {
-        title: "Hugging Chat",
-        href: "https://huggingface.co/chat/"
+        title: "Poe",
+        href: "https://poe.com/"
       },
+
       {
         title: "Duck AI",
         href: "https://duckduckgo.com/?q=DuckDuckGo+AI+Chat&ia=chat&duckai=1"
+      },
+      {
+        title: "Hugging Chat",
+        href: "https://huggingface.co/chat/"
       },
       // {
       //   title: "OpenRouter",
