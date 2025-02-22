@@ -84,12 +84,12 @@ const db: Record<string, LinkPageData> = {
         href: "https://chat.deepseek.com/",
       },
       {
-        title: "Mistral",
-        href: "https://chat.mistral.ai/chat"
-      },
-      {
         title: "Qwen",
         href: "https://chat.qwenlm.ai/",
+      },
+      {
+        title: "Mistral",
+        href: "https://chat.mistral.ai/chat"
       },
       
       "br",
