@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { goto, invalidateAll, replaceState } from "$app/navigation";
+  import { page } from "$app/stores";
     import type { LinkPageData } from "./data";
 
     export let defaultData: any = null
@@ -9,9 +11,10 @@
     let title = defaultData?.title || ""
 
     $: dataJson = { title, favicon, links }
-    $: url = `/custom?data=${
-        encodeURIComponent(JSON.stringify(dataJson))
-    }`
+    $: encodedData = encodeURIComponent(JSON.stringify(dataJson))
+    $: linksPageUrl = `/custom?data=${encodedData}`
+    // $: editUrl = `/?data=${encodedData}`
+
 </script>
 
 
@@ -77,8 +80,8 @@
 
     <div class="final-button-div">
         
-        <a href="{url}">Go to page</a>
-        <!-- <button class="final-button" on:click={}> Go To Page</button> -->
+        <a href="{linksPageUrl}" target="_blank">Go to page</a>
+        <!-- TODO: live update forum state in the url and make sure back and forward button work, then remove the targe=_blank-->
     </div>
 </div>
 

@@ -1,6 +1,7 @@
 <script lang="ts">
   import { beforeUpdate, onMount } from "svelte";
     import type { LinkPageData } from "./data";
+  import { goto, invalidate, invalidateAll } from "$app/navigation";
 
     export let data: LinkPageData;
 
@@ -52,10 +53,10 @@
     onMount(() => {
         if (typeof window == "undefined") return
         function getCustomUrl() {
-            return `localhost:5173/?data=${encodeURIComponent(JSON.stringify(data))}`
+            return `${window.location.origin}/?data=${encodeURIComponent(JSON.stringify(data))}`
         }
-        // @ts-ignore
-        // window.getCustomUrl = getCustomUrl;
+
+        // TODO: add support to CreateYourOwn for dark/light mode URLs
 
         console.log("FORK THIS PAGE AT:")
         console.log(getCustomUrl())
@@ -63,6 +64,11 @@
 
 
 </script>
+
+<svelte:window on:popstate={e => {
+    // fixes a bug
+    invalidateAll()
+}}></svelte:window>
 
 <main>
     <div>
