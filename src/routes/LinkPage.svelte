@@ -48,6 +48,19 @@
         setTimeout(updateFavicon, 700); // just in case
     })
 
+    // 
+    onMount(() => {
+        if (typeof window == "undefined") return
+        function getCustomUrl() {
+            return `localhost:5173/?data=${encodeURIComponent(JSON.stringify(data))}`
+        }
+        // @ts-ignore
+        // window.getCustomUrl = getCustomUrl;
+
+        console.log("FORK THIS PAGE AT:")
+        console.log(getCustomUrl())
+    })
+
 
 </script>
 

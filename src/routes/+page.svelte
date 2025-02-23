@@ -11,7 +11,16 @@
     <h1> Simple link pages </h1>
 
     <p> I made this so i can favorite groups of urls in arc/zen browser in one tab.</p>
-    <p>Feel free to use however you like</p>
+    <p>Feel free to use however you like!</p>
+    <br>
+    <p> Links on pages should open within the same tab in zen essentials.</p>
+    <br>
+    <!-- <p> 
+        Custom page data is fully encoded into the url using queryParams. <br>
+    </p> -->
+
+
+    <p></p>
 
     <h2>Premade Links:</h2>
     <ul style="">
@@ -29,13 +38,17 @@
     {/if}
     <br>
     <p>(remove the word "custom" from a url to edit the links of that page)</p>
+    <p>(or look in the browser console)</p>
 
     <br>
     <p style="margin-top: 7rem">More random tools at <a href="https://www.ttools.io">ttools.io</a></p>
 </main>
 
 <svelte:head>
-    <title>Simple link pages</title>
+    <title>Simple Link Pages - create your own</title>
+    <meta name="description" content="Create your own webpage of links. Great for pinned tabs or bookmarks! Can also use for sharing. In zen browser, links open inside the same tab when pinned to essentials.">
+    
+    <!-- todo: decide on canonical tag-->
 </svelte:head>
 
 <style>
