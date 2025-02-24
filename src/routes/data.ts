@@ -1,28 +1,30 @@
 
 export type LinkPageData = {
-    favicon?: string | {
-      dark: string,
-      light: string
-    },
+    // favicon?: string | {
+    //   dark: string,
+    //   light: string
+    // },
     title?: string,
     links: ({ href: string, title: string, faviconUrl?: string } | "br")[]
-}
+} & ({
+    favicon: string;
+} | {
+    favicon?: string
+    faviconDark: string;
+    faviconLight: string;
+})
 
 const db: Record<string, LinkPageData> = {
   music: {
     title: "Music Links",
     // favicon : "https://s2.googleusercontent.com/s2/favicons?fdomain=https://soundcloud.com",
-    // favicon: `
-    //     data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAbZQTFRFAAAA+FAA+VIA91IA+VMA+VMA+VMA+VMA+VMA+VMA+VMA+FIA+FIA/1EA+VMA+lQA+FEA+VMA+lQA+lMA+lMA+moi+4xV/KN2/KuD/KBy+4dN+mIW+mYc+4tT/KJ1/K2F/KV6+5hm+4NH+VwN+4hP/cqx/tXA/tXB/byc+m8q/Jxs/cuy/ujd//bx//38//////79//Lr/t7O/b2d+4ZL/cqw/ufb//Xw//z7//7+/u7m/dG7/J9w/u3k+41W/unf/uPW/KqB+m0m/LSQ/uvi//Ls/cCi+nc1/KN3+5pq/uPV/uLU+5Fc/LOP/LeU//z6/bmX+ns7//r3/u/o/Kd9/une/c+4+nUy/c62/K6H+4JF/c63+nIu/dC5/KuC/J1t/urg/cSn/cSo/KV5/t3N//n2/LGL/tzL+nk4//Tv/KFz/ufc/tfE/byb/cmv/trI//j1/tjF//fz/tbC/KmA/uDR+4RJ/uba/cGj//by/u/n+5Nf/Kl//J1u//Hq/KR4/ces//j0/Kh+/KyE/LaT//v5/K+I/J9x/K+J/K6I/KqC/KmB/K2G+5Vi+VgI+VkJ+VYE+VcFDiUe7gAAAJJ0Uk5TACNRgLjx/6h7+dO9Thb2myZZjL/y//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+wXbJaAAADZUlEQVR4nO3b3UsUURQA8Htm1212dXf9XIjSLNcsSNCHNhGJTIhCKIj+hV6jlyL6kKLAr7eeI4roJaKMSMK+XhIiyCiQwPTBtB4ya82PNnV3mpmdXXdn9866XZ1DdM6DO6Pnzv1xHe917u4BZgTowewIRY9Ev8aLS+Hmr0/AopICkCFqc/+MOZRIEuBZtr17LZwLBqBwCaV/xgrmdUDRIlL/jLnmVIAXImgAWZkF5v+F1j9j7hkoXkDsX73/oWQeFVAIpXOogCIom0UFeKH8JyrABy7U/rVViAAEIAABCEAAAhCAAAQgQJ4N/PHNpCluQiCeABNCgKrkhpUiwVj8qMK/so+lH703NarwF6rfNR62PQCf52f+GhBaSm4a+OCVfnVnddjUtBhGUgaiJXNY1MF4IQ6IbXqufm2DH5nP8Z5SGDAO/U3hbM94AffQV1FANfSz9pG6sax5wTdftJfKRhjJfn13FdwXBHi2vGsY524iyNteT7Bj41HuNotSD3fEAGxz6UeLXZxY42ALvLXowb3zidVvYRWAHOGrHbbOlXfdWldA7tg9/QgXEIIbuADWBNdxAc1wbW0ANRthQZ1th7/x9vZDrqwJbt8Yd2VYPaAVpidf6keV+0bDGS20yRKGOAn7p7hzwWoBnpYPAytnJ4cnzS2UvY8/cRMOTtwVBLTKD9Lm4sO1/ekN2m8vT/ETgjt6xQCBPT2m/oIDaecHboatEprLu4UAR6DT9POK430p95niDZinmvSEo3BFBNBWcjkjoSN1iQltvWid0FqWeYU8ANmuf8J7TzDBGnCpLxVQ05GRUBKQBBMEAeIJBCAAAQhAAALYCwheQAb4rxIAGVB7HhmAPgIEGB1EBqCPADpg+zlkwMPvyICqfB9O1xpQdxYZgL4cr/3j+b/2H1HegJw7JOIJ1gD0EUAHdD5rWDl5esi8S5d3Qj33PQub3jntOvO/A/hBAAIQwCZAN5zGBXQ5TuECWC8BsAE9yDchPwhAAAJAgT1lnrxQwCnlzlrHiIHDgQqIguREBSwDFKACloBtsLvgNzXgNzCQ7S/5TYQjoqh/hHIMDSBF9LJfpLLjeOGxPg0hFR5rZcdG6XeRZH/prxzTi02Nidgr2V38647Fa02TK0Gx9llpe8o/fVr1f+KjX38AilUqbFQeifUAAAAASUVORK5CYII=
-    // `,
-    favicon: {
-      dark: `
+    
+    faviconDark:`
         data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0xMiAyMS4yNWE5LjI1IDkuMjUgMCAxIDAtOC4zMDctNS4xNzdjLjEwOC4yMi4xNDQuNDY4LjA4OS43MDZsLS44MTYgMy41MzZhLjYuNiAwIDAgMCAuNzIuNzJsMy41MzUtLjgxN2ExLjA2IDEuMDYgMCAwIDEgLjcwNi4wOUE5LjIgOS4yIDAgMCAwIDEyIDIxLjI1TTcuOTcgOS44ODZoOC4wNm0tOC4wNiA0LjIyOGg1Ljc0OCIvPjwvc3ZnPg==
       `,
-      light: `
-        data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0xMiAyMS4yNWE5LjI1IDkuMjUgMCAxIDAtOC4zMDctNS4xNzdjLjEwOC4yMi4xNDQuNDY4LjA4OS43MDZsLS44MTYgMy41MzZhLjYuNiAwIDAgMCAuNzIuNzJsMy41MzUtLjgxN2ExLjA2IDEuMDYgMCAwIDEgLjcwNi4wOUE5LjIgOS4yIDAgMCAwIDEyIDIxLjI1TTcuOTcgOS44ODZoOC4wNm0tOC4wNiA0LjIyOGg1Ljc0OCIvPjwvc3ZnPg==
-      `,
-    },
+    faviconLight: `
+      data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0xMiAyMS4yNWE5LjI1IDkuMjUgMCAxIDAtOC4zMDctNS4xNzdjLjEwOC4yMi4xNDQuNDY4LjA4OS43MDZsLS44MTYgMy41MzZhLjYuNiAwIDAgMCAuNzIuNzJsMy41MzUtLjgxN2ExLjA2IDEuMDYgMCAwIDEgLjcwNi4wOUE5LjIgOS4yIDAgMCAwIDEyIDIxLjI1TTcuOTcgOS44ODZoOC4wNm0tOC4wNiA0LjIyOGg1Ljc0OCIvPjwvc3ZnPg==
+    `,
     links: [
       { href: "https://open.spotify.com", title: "Spotify" },
       { href: "https://soundcloud.com", title: "SoundCloud" },
@@ -196,6 +198,11 @@ const db: Record<string, LinkPageData> = {
         title: "Qwen",
         href: "https://chat.qwenlm.ai/",
       },
+      {
+        title: "Kimi",
+        href: "https://kimi.ai/",
+      },
+      // "br",
       {
         title: "Mistral",
         href: "https://chat.mistral.ai/chat"

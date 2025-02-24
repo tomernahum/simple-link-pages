@@ -48,7 +48,8 @@
     <title>Simple Link Pages - create your own</title>
     <meta name="description" content="Create your own webpage of links. Great for pinned tabs or bookmarks! Can also use for sharing. In zen browser, links open inside the same tab when pinned to essentials.">
     
-    <!-- todo: decide on canonical tag-->
+    <link rel="canonical" href="https://links.ttools.io">
+    
 </svelte:head>
 
 <style>
