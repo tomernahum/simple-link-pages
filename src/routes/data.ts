@@ -164,6 +164,11 @@ const db: Record<string, LinkPageData> = {
         title: "Grok",
         href: "https://grok.com/",
       },
+      {
+        // title: "Pi",
+        title: "Pi AI",
+        href: "https://pi.ai/threads",
+      },
 
       {
         // title: "Microsoft Copilot",
@@ -174,12 +179,6 @@ const db: Record<string, LinkPageData> = {
       {
         title: "AI Studio",
         href: "https://aistudio.google.com",
-      },
-
-      {
-        // title: "Pi",
-        title: "Pi AI",
-        href: "https://pi.ai/threads",
       },
 
       // "br",
@@ -225,27 +224,32 @@ const db: Record<string, LinkPageData> = {
       "br",
 
       {
-        title: "T3 chat",
+        title: "Duck AI",
+        href: "https://duckduckgo.com/?q=DuckDuckGo+AI+Chat&ia=chat&duckai=1",
+      },
+      {
+        title: "T3 Chat",
         href: "https://t3.chat",
         // made by theo who is not me
+      },
+
+      {
+        title: "Hugging Chat",
+        href: "https://huggingface.co/chat/",
+      },
+      {
+        title: "OpenRouter",
+        href: "https://openrouter.ai/chat",
       },
       {
         title: "Poe",
         href: "https://poe.com/",
       },
 
-      {
-        title: "Duck AI",
-        href: "https://duckduckgo.com/?q=DuckDuckGo+AI+Chat&ia=chat&duckai=1",
-      },
-      {
-        title: "Hugging Chat",
-        href: "https://huggingface.co/chat/",
-      },
       // {
-      //   title: "OpenRouter",
-      //   href: "https://openrouter.ai/chat"
-      // }
+      //   title: "Blackbox AI",
+      //   href: "https://blackbox.ai/",
+      // },
     ],
   },
 
