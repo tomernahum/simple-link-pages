@@ -110,16 +110,22 @@
 
 <style>
     div {
-        /* Center it */
-        position: fixed;
-        inset: 0;
+        /* Center it when shorter than viewport, allow scrolling when taller */
         width: fit-content;
-        height: fit-content;
-        margin: auto;
-
+        max-width: 100%;
+        margin-inline: auto;
+        padding-block: 2rem;
         display: flex;
         flex-direction: column;
         gap: .75rem;
+    }
+    
+    main {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow-y: auto;
     }
 
     div li {
