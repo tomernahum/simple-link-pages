@@ -1,25 +1,27 @@
-
 export type LinkPageData = {
-    // favicon?: string | {
-    //   dark: string,
-    //   light: string
-    // },
-    title?: string,
-    links: ({ href: string, title: string, faviconUrl?: string } | "br")[]
-} & ({
-    favicon: string;
-} | {
-    favicon?: string
-    faviconDark: string;
-    faviconLight: string;
-})
+  // favicon?: string | {
+  //   dark: string,
+  //   light: string
+  // },
+  title?: string;
+  links: ({ href: string; title: string; faviconUrl?: string } | "br")[];
+} & (
+  | {
+      favicon: string;
+    }
+  | {
+      favicon?: string;
+      faviconDark: string;
+      faviconLight: string;
+    }
+);
 
 const db: Record<string, LinkPageData> = {
   music: {
     title: "Music Links",
     // favicon : "https://s2.googleusercontent.com/s2/favicons?fdomain=https://soundcloud.com",
-    
-    faviconDark:`
+
+    faviconDark: `
         data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0xMiAyMS4yNWE5LjI1IDkuMjUgMCAxIDAtOC4zMDctNS4xNzdjLjEwOC4yMi4xNDQuNDY4LjA4OS43MDZsLS44MTYgMy41MzZhLjYuNiAwIDAgMCAuNzIuNzJsMy41MzUtLjgxN2ExLjA2IDEuMDYgMCAwIDEgLjcwNi4wOUE5LjIgOS4yIDAgMCAwIDEyIDIxLjI1TTcuOTcgOS44ODZoOC4wNm0tOC4wNiA0LjIyOGg1Ljc0OCIvPjwvc3ZnPg==
       `,
     faviconLight: `
@@ -96,9 +98,9 @@ const db: Record<string, LinkPageData> = {
       // },
       {
         title: "Mistral",
-        href: "https://chat.mistral.ai/chat"
+        href: "https://chat.mistral.ai/chat",
       },
-      
+
       "br",
 
       // {
@@ -112,7 +114,7 @@ const db: Record<string, LinkPageData> = {
       },
       {
         title: "Hugging Chat",
-        href: "https://huggingface.co/chat/"
+        href: "https://huggingface.co/chat/",
       },
       // {
       //   title: "OpenRouter",
@@ -154,33 +156,34 @@ const db: Record<string, LinkPageData> = {
         title: "Gemini",
         href: "https://gemini.google.com/app",
       },
-      {
-        title: "Google",
-        href: "https://google.com"
-      },
+      // {
+      //   title: "Google",
+      //   href: "https://google.com",
+      // },
       {
         title: "Grok",
-        href: "https://grok.com/"
+        href: "https://grok.com/",
       },
-      
+
       {
         // title: "Microsoft Copilot",
         title: "Copilot",
         href: "https://bing.com/chat",
       },
-      
+
+      {
+        title: "AI Studio",
+        href: "https://aistudio.google.com",
+      },
+
       {
         // title: "Pi",
         title: "Pi AI",
-        href: "https://pi.ai/threads"
+        href: "https://pi.ai/threads",
       },
-      
-
-
 
       // "br",
-    
-      
+
       // {
       //   title: "Grok",
       //   href: "https://grok.com/"
@@ -205,9 +208,9 @@ const db: Record<string, LinkPageData> = {
       // "br",
       {
         title: "Mistral",
-        href: "https://chat.mistral.ai/chat"
+        href: "https://chat.mistral.ai/chat",
       },
-      
+
       // "br",
       // {
       //   // title: "Microsoft Copilot",
@@ -218,10 +221,9 @@ const db: Record<string, LinkPageData> = {
       //   title: "Meta",
       //   href: "https://www.meta.ai/",
       // },
-      
+
       "br",
 
-      
       {
         title: "T3 chat",
         href: "https://t3.chat",
@@ -229,16 +231,16 @@ const db: Record<string, LinkPageData> = {
       },
       {
         title: "Poe",
-        href: "https://poe.com/"
+        href: "https://poe.com/",
       },
 
       {
         title: "Duck AI",
-        href: "https://duckduckgo.com/?q=DuckDuckGo+AI+Chat&ia=chat&duckai=1"
+        href: "https://duckduckgo.com/?q=DuckDuckGo+AI+Chat&ia=chat&duckai=1",
       },
       {
         title: "Hugging Chat",
-        href: "https://huggingface.co/chat/"
+        href: "https://huggingface.co/chat/",
       },
       // {
       //   title: "OpenRouter",
@@ -283,25 +285,20 @@ const db: Record<string, LinkPageData> = {
 };
 
 db.ai3 = {
-  "title": "test",
-  "links": []
-}
+  title: "test",
+  links: [],
+};
 
 // const x = encodeURIComponent(JSON.stringify(db.ai2))
 // console.log(x)
 
-
 export function getPageData(slug: string) {
+  const data = db[slug] || undefined;
 
-    const data = db[slug] || undefined 
+  if (!data) return;
 
-    if (!data) return
-
-
-    return {
-        slug,
-        ...data
-    }
+  return {
+    slug,
+    ...data,
+  };
 }
-
-
