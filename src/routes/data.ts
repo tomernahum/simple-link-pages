@@ -165,6 +165,12 @@ const db: Record<string, LinkPageData> = {
         href: "https://grok.com/",
       },
       {
+        title: "Mercury",
+        href: "https://chat.inceptionlabs.ai/",
+        faviconUrl:
+          "https://icons.duckduckgo.com/ip3/chat.inceptionlabs.ai.ico",
+      },
+      {
         // title: "Pi",
         title: "Pi AI",
         href: "https://pi.ai/threads",
