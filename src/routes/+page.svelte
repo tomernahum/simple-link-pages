@@ -22,7 +22,7 @@
 
     <p></p>
 
-    <h2>Premade Links:</h2>
+    <h2>Example Links:</h2>
     <ul style="">
         <li>
             <a href="/ai">ai chat</a>,
