@@ -80,7 +80,7 @@
 
     <div class="final-button-div">
         
-        <a href="{linksPageUrl}" target="_blank">Go to page</a>
+        <a href="{linksPageUrl}" target="_blank" data-sveltekit-reload>Go to page</a>
         <!-- TODO: live update forum state in the url and make sure back and forward button work, then remove the targe=_blank-->
     </div>
 </div>
