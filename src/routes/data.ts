@@ -41,11 +41,19 @@ const db: Record<string, LinkPageData> = {
       { href: "https://soundcloud.com", title: "SoundCloud" },
       { href: "https://www.youtube.com/playlist?list=LL", title: "YouTube" },
       "br",
-      { href: "https://google.com", title: "Google" },
+      // { href: "https://google.com", title: "Google" },
       {
         href: "https://www.youtube.ttools.io/watch?v=jfKfPfyJRdk/",
-        title: "LoFi Girl Stream",
+        title: "LoFi Hip Hop",
       },
+      {
+        href: "https://radio.garden",
+        title: "Radio Garden",
+      },
+      {
+        href: "https://www.twitch.tv/directory/category/djs",
+        title: "Twitch DJs"
+      }
     ],
   },
 
